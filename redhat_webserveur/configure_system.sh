@@ -7,7 +7,7 @@ echo "Configuration du système..."
 
 systemctl enable --now httpd
 
-systemctl start httpd
+systemctl start mysqld
 TEMP_PASS=$(grep 'temporary password' /var/log/mysqld.log | awk '{print $NF}')
 
 mysql --connect-expired-password -u root -p"$TEMP_PASS" <<EOF

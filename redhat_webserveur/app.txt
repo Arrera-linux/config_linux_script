@@ -2,5 +2,5 @@ httpd
 cockpit-files
 php
 php-mysqlnd
-mysql-server
+mysql8.4-server
 phpMyAdmin

@@ -1,0 +1,6 @@
+httpd
+cockpit-files
+php
+php-mysqlnd
+mysql-server
+phpMyAdmin

@@ -56,32 +56,14 @@ fi
 
 # Vérifier si le fichier existe
 if [ -f "$CONFIG_FILE" ]; then
-    echo "✅ Fichier de configuration trouvé."
-
     # 1. Faire une sauvegarde du fichier original (au cas où)
     cp "$CONFIG_FILE" "$CONFIG_FILE.backup_$(date +%F_%T)"
-    echo "📦 Sauvegarde créée."
-
-    # 2. Utiliser sed pour remplacer 'Require local' par 'Require all granted'
-    # Cela autorise l'accès depuis n'importe quelle IP
     sed -i 's/Require local/Require all granted/g' "$CONFIG_FILE"
-    echo "🔓 Restriction 'Require local' levée."
-
-    # 3. Tester la configuration Apache pour éviter les crashs
     if apachectl configtest; then
-        # 4. Redémarrer Apache pour appliquer les changements
         systemctl restart httpd
-        echo "🚀 Service httpd redémarré avec succès."
-        echo "👉 Vous devriez maintenant pouvoir accéder à phpMyAdmin."
     else
-        echo "❌ Erreur de syntaxe Apache détectée. Le redémarrage a été annulé."
-        # Restauration en cas d'erreur
         cp "$CONFIG_FILE.backup_*" "$CONFIG_FILE"
-        echo "🔙 Configuration originale restaurée."
     fi
-
-else
-    echo "❌ Le fichier $CONFIG_FILE n'a pas été trouvé. Avez-vous bien installé phpMyAdmin ?"
 fi
 
 echo "Terminé."

@@ -6,6 +6,7 @@ Depots qui rasemble les config deja ecrite pour le [script](https://github.com/A
 
 ### Redhat Webserveur
 
-Installe un serveur web complet (Apache2) avec php, mysql et phpmyadmin 
+Installe un serveur web complet (Apache2) avec php, mysql et phpmyadmin.
+Sur les ditribution redhat entreprise linux 10 et CentOS 10 (Pas tester sur alma Linux et autre)
 
 [lien du script](https://github.com/Arrera-linux/config_linux_script/releases/download/1/webserveur_rhel10.zip)

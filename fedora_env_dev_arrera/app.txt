@@ -6,7 +6,6 @@ btop
 gpaste-ui
 gnome-shell-extension-gpaste
 gcc 
-python3.13-pip
 adw-gtk3-theme
 firefox
 cmark 

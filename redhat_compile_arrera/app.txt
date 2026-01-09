@@ -40,3 +40,10 @@ python3-pillow-tk
 qt6-qtbase-devel 
 qt6-qttools-devel
 java-latest-openjdk
+python3 
+python3-devel 
+python3-pip 
+ruby 
+ruby-devel 
+rpm-build 
+libffi-devel
